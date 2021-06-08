@@ -52,7 +52,6 @@ router.delete('/:id', checkAccountId, (req, res, next) => {
 
 // eslint-disable-line
 router.use((err, req, res, next) => {
-	// console.log('Err handling middleware kicking in!', err.message);
 	res.status(err.status || 500).json({
 		custom: 'Strange things are afoot at the Circle K',
 		message: err.message,
