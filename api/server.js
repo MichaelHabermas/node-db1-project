@@ -8,8 +8,8 @@ server.use('/api/accounts', accountsRouter);
 
 server.use(logger);
 
-server.use('*', (req, res) => {
-	res.status(404).send(`<p>Oops! Can't find that!</p>`);
-});
+// server.use('*', (req, res) => {
+// 	res.status(404).send(`<p>Oops! Can't find that!</p>`);
+// });
 
 module.exports = server;

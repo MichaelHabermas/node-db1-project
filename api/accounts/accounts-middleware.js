@@ -43,7 +43,7 @@ exports.checkAccountPayload = (req, res, next) => {
 exports.checkAccountNameUnique = (req, res, next) => {
 	Accounts.getAll()
 		.then(accounts => {
-			accounts.filter(account => {
+			accounts.forEach(account => {
 				if (account.name === req.body.name) {
 					next({
 						status: 400,
@@ -65,7 +65,7 @@ exports.checkAccountId = (req, res, next) => {
 					message: 'account not found'
 				});
 			} else {
-				req.account = account;
+				// req.account = account;
 				next();
 			}
 		})
