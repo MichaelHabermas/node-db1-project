@@ -36,9 +36,9 @@ function updateById(id, { name, budget }) {
 // }
 
 async function deleteById(id) {
-	const postToDelete = await getById(id);
+	const accToDelete = await getById(id);
 	await db('accounts').where({ id }).del();
-	return postToDelete;
+	return accToDelete;
 }
 
 module.exports = {

@@ -34,6 +34,7 @@ router.put('/:id', checkAccountId, checkAccountPayload, checkAccountNameUnique, 
 		})
 		.catch(next);
 
+	// - OR -
 	// try {
 	// 	const data = await Accounts.updateById(req.params.id, req.body);
 	// 	res.json(data);
@@ -44,8 +45,8 @@ router.put('/:id', checkAccountId, checkAccountPayload, checkAccountNameUnique, 
 
 router.delete('/:id', checkAccountId, (req, res, next) => {
 	Accounts.deleteById(req.params.id)
-		.then(deletedPost => {
-			res.status(200).json(deletedPost);
+		.then(deletedAcc => {
+			res.status(200).json(deletedAcc);
 		})
 		.catch(next);
 });

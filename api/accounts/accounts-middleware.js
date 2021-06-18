@@ -65,9 +65,9 @@ exports.checkAccountId = (req, res, next) => {
 					message: 'account not found'
 				});
 			} else {
-				// req.account = account;
 				next();
 			}
 		})
 		.catch(next);
 };
+
